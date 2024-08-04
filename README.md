@@ -740,20 +740,50 @@ git branch
 ============================================
 
 //файл который говорит git какие файлы игнорировать Git  
-.gitignore
 .DS_Store
 .idea/
 .idea/*
 .vscode
 *.sublime*
-build/
-node_modules/
 npm-debug.*
 
+dist/
+node_modules/
+package-lock.json
+app/css/*
 
 
+---------------------------------------------добавление шрифтов-------------------------------------------
 
-
+1. Скачиваем нужные шрифты с GoogleFonts папку app/fonts
+2. Если шрифты в формате .ttf их нужно конвертировать в шрифты woff2 и woff
+3. _fonts.scss прописываем каждый шрифт
+   @font-face {
+   font-family: 'Quicksand-Regular', sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   src: local('Quicksand-Regular'),
+   url('../fonts/Quicksand-Regular.woff2') format('woff2'),
+   url('../fonts/Quicksand-Regular.woff') format('woff');
+   font-display: swap;
+   }
+4. далее идем в переменные _vars.scss и создаем переменную для шрифта(placeholder) %ИМЯ
+   %quicksand-400 {
+   font-family: 'Quicksand-Regular', sans-serif;
+   font-weight: 400;
+   }
+5. теперь идем в то место где будем использовать этот шрифт например в _global.scss и прописываем его c помощью @extend %ИМЯ
+   body {
+   color: $default;
+   font-size: 16px;
+   line-height: 26px;
+   font-weight: 500;
+   @extend %quicksand-500;
+   }
+   Заключение
+   @font-face определяет шрифт, который будет использоваться на веб-странице.
+   %quicksand-400 — это placeholder в SASS для стилей шрифта.
+   @extend %quicksand-400 позволяет любому селектору наследовать стили из этого placeholder.
 
 
 
