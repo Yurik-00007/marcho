@@ -23,25 +23,20 @@
   }
 
   &__list-link {
-    @extend %quicksand-400;
-    //@extend %roboto-400;
+    @extend %roboto-400;
     color: $title;
-    padding-bottom: 1px;
-    //transition: all .3s;
+    padding:0 2px 1px;
+    transition: all .3s;
 
     &:hover {
       color: $accent;
       border-bottom: 2px solid $accent;
-      @extend %quicksand-500;
-      //@extend %roboto-700;
-      //font-weight: 700;
-      //text-shadow: 1px 0 0 currentColor, 0 0 0 currentColor;
+      @extend %roboto-700;
     }
   }
 
   &__list-link--active {
-    @extend %quicksand-500;
-    //@extend %roboto-700;
+    @extend %roboto-700;
     color: $accent;
     border-bottom: 2px solid $accent;
   }
@@ -72,7 +67,7 @@
     text-align: center;
   }
 }
-
+//==============================
 .footer {
   background: $bg;
 }

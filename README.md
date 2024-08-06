@@ -958,5 +958,7 @@ app/css/*
     https://daruse.ru/podklyuchenie-i-nastrojka-fancybox
 13. Плавный скролл:
     https://webcomplex.com.ua/jquery/plavnyj-skroll-posle-nazhatiya-na-yakornuyu-ssylku.html
-
+14. Фоновые шрифты уже не актуальны лучше использовать svg
+FontAwesome: https://fontawesome.com/
+    https://icomoon.io/app/#/select/library
 
