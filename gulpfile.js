@@ -96,7 +96,10 @@ async function styles() {
 function scripts() {
   // return src(['app/js/**/*.js'])
   //объединяет файлы
-  return src(['node_modules/jquery/dist/jquery.js', 'app/js/main.js'])
+  return src([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'app/js/main.js'])
     //дает единое имя для объединенных js файлов в один
     .pipe(concat('main.min.js'))
     //сжимает js файл до минимальных размеров

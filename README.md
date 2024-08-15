@@ -799,8 +799,38 @@ app/css/*
 10. Указать набор png-24 и прозрачность 
 11. Сохранить и место куда и имя
 
+---------------------------------------------схема выравнивания псевдоэлемента-------------------------------------------
 
+&::before{
+content: '';
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
 
+пример:
+
+button {
+padding: 0;
+font-size: 0;
+background: transparent;
+width: 27px;
+height: 27px;
+border-radius: 50%;
+border: 1px solid transparent;
+position: relative;
+&::before{
+content: '';
+position: absolute;
+width: 6px;
+height: 6px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: $default;
+border-radius: 50%;
+}
+}
 
 
 
@@ -961,4 +991,6 @@ app/css/*
 14. Фоновые шрифты уже не актуальны лучше использовать svg
 FontAwesome: https://fontawesome.com/
     https://icomoon.io/app/#/select/library
+15. $ npm install --save-dev slick-carousel
+
 

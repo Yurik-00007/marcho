@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "reset";
+@import "libs";
 @import "global";
 
 .header {
@@ -25,7 +26,7 @@
   &__list-link {
     @extend %roboto-400;
     color: $title;
-    padding:0 2px 1px;
+    padding: 0 2px 1px;
     transition: all .3s;
 
     &:hover {
@@ -67,6 +68,7 @@
     text-align: center;
   }
 }
+
 //==============================
 .footer {
   background: $bg;
@@ -164,12 +166,8 @@
 
   &__form-btn {
     border: none;
-    background: $accent;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 12px 26px;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
-    cursor: pointer;
+    @extend %btn;
+
   }
 }
 
@@ -189,6 +187,94 @@
     vertical-align: middle;
   }
 }
+
+//================================================
+.top-slider {
+  background-image: url('../images/top-slider-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $bg;
+  padding: 65px 0 44px;
+  &__container {
+    max-width: 1560px;
+  }
+
+  &__content {
+    padding-top: 125px;
+    padding-left: 175px;
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  &__title {
+    max-width: 670px;
+    font-size: 58px;
+    @extend %roboto-700;
+    color: $title;
+    line-height: 68px;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    max-width: 470px;
+    margin-bottom: 55px;
+  }
+
+  &__link {
+    @extend %btn;
+    padding: 14px 36px;
+  }
+
+  .slick-dots {
+    margin-top: -70px;
+    display: flex;
+    justify-content: center;
+
+    li {
+      padding: 0 7px;
+      line-height: 0;
+      button {
+        padding: 0;
+        font-size: 0;
+        background: transparent;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: $default;
+          border-radius: 50%;
+        }
+      }
+
+      &.slick-active {
+        button {
+          border-color: $accent;
+
+          &::before {
+            //content: '';
+            background: $accent;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
 
 @import "media";
 
