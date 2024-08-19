@@ -36,5 +36,12 @@ $bg: #f6f6f6;
   padding: 12px 26px;
   cursor: pointer;
   box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+}
 
+
+%bgimg{
+  background-image: url('../images/decor/video-fashin-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }

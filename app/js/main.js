@@ -6,6 +6,6 @@ $(function () {
     autoplay:true,
     autoplaySpeed: 2000,
     pauseOnHover:true,
-
   });
+  Fancybox.bind("[data-fancybox]", {})
 })

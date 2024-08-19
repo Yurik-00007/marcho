@@ -970,7 +970,28 @@ grid-area: a;
 grid-area: b;
 grid-area: c;
 
+---------------------------------------------fancybox-------------------------------------------
 
+npm install --save-dev @fancyapps/ui
+
+Чтобы подключить fancybox:
+1. Нужно подключить стили в файле _libs.scss и прописать путь к ним(❗без расширения)
+   @import '../../node_modules/@fancyapps/ui/dist/fancybox/fancybox';
+
+2. Нужно подключить script в gulpfile.js путь к 'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
+   function scripts() {
+   return src([
+   'node_modules/jquery/dist/jquery.js',
+   'node_modules/slick-carousel/slick/slick.js',
+   'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
+   'app/js/main.js'])
+   .pipe(concat('main.min.js'))
+   .pipe(uglify())
+   .pipe(dest('app/js'))
+   .pipe(browserSync.stream())
+   }
+3. И не рабыть прописать код в main.js:
+   Fancybox.bind("[data-fancybox]", {})
 
 
 
@@ -1124,6 +1145,10 @@ grid-area: c;
 12. fancybox -для открытия видео:
     https://fancyapps.com/fancybox/3/
     https://daruse.ru/podklyuchenie-i-nastrojka-fancybox
+    https://fancyapps.com/fancybox/plugins/html/#videos
+    npm install --save-dev @fancyapps/ui
+
+
 13. Плавный скролл:
     https://webcomplex.com.ua/jquery/plavnyj-skroll-posle-nazhatiya-na-yakornuyu-ssylku.html
 14. Фоновые шрифты уже не актуальны лучше использовать svg
