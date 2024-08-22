@@ -993,15 +993,78 @@ npm install --save-dev @fancyapps/ui
 3. И не рабыть прописать код в main.js:
    Fancybox.bind("[data-fancybox]", {})
 
+---------------------------------------------object-fit-------------------------------------------
+
+object-fit - управляет соотношением сторон заменяемых элементов(подобно  background-size), таких как <img> и <video>, когда у них задана ширина
+   или высота, а также способом масштабирования. свойство похоже на background-size
+   object-fit: fill | contain | cover | none
+   fill - элемент масштабируется, чтобы соответствовать заданным размерам, при этом пропорции игнорируются.
+   cover - масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.
+   (будет растягивать картинку пока картинка не достигнет обе границы и будет сильно увеличивать изображение)
+   contain - масштабирует изображение с сохранением пропорций таким образом, чтобы картинка целиком поместилась внутрь
+   блока(будет растягивать картинку пока картинка не достигнет размера какой-то границы).
+   none - сохраняются исходные пропорции элемента, установленные значения ширины или высоты не влияют на содержимое.
 
 
+---------------------------------------------Отличия display: block от display: inline-block;-------------------------------------------
 
+Отличия:
+Блочная модель:
 
+display: block;: Элемент с этим свойством является блочным. Он занимает всю доступную ширину своего родительского контейнера (по умолчанию), то есть растягивается на всю ширину строки, и каждый такой элемент отображается с новой строки. Примеры блочных элементов: <div>, <h1>, <p>, <header>, <footer>.
+display: inline-block;: Элемент ведёт себя как встроенный (inline) элемент, но при этом его можно настраивать как блочный (например, задавать ширину, высоту, отступы, внутренние отступы). В отличие от block, элемент не занимает всю строку и может располагаться рядом с другими элементами. Примеры встроенных блочных элементов: <img>, <input>, <button>.
 
+---------------------------------------------сроем элемент каторый выходит за границы-------------------------------------------
 
+      <div class="products-item__img-box">
+                        <img class="products-item__images" src="images/products/1.jpg" alt="product">
+                        <div class="products-item__link-box">
+                            <a class="products-item__link" href="#">
+                                <svg
+                                        width="19px" height="20px">
+                                    <path fill-rule="evenodd"  fill="rgb(41, 40, 45)"
+                                          d="M18.709,18.219 L14.028,13.269 C15.231,11.813 15.891,9.982 106 7.947,2.106 L7.947,2.106 Z"/>
+                                </svg>
+                            </a></div></div>   
 
+products-item__img-box -это блок, который будет скрывать все элементы, которые выходят за пределы этого блока и при наведение на который(products-item__img-box) будет появляться скрытый блок (products-item__link-box)
+products-item__link-box- это блок с сылками который будет срыт ниже уровня видимого блока родителя
 
+.products-item {
+max-width: 370px;
+text-align: center;
 
+&__img-box {
+position: relative;
+height: 370px;
+▶️overflow: hidden;
+}
+
+&__link-box {
+position: absolute;
+bottom: 50px;
+background-color: #fff;
+left: 0;
+right: 0;
+width: 212px;
+height: 50px;
+margin: 0 auto;
+border-radius: 22px;
+box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+display: flex;
+justify-content: space-around;
+align-items: center;
+▶️transform: translateY(300%);
+▶️transition: all .3s;
+
+}
+&:hover{
+.products-item__link-box{
+▶️transform: translateY(0);
+}
+}
+
+}
 
 
 
@@ -1156,6 +1219,10 @@ FontAwesome: https://fontawesome.com/
     https://icomoon.io/app/#/select/library
 15. установка slick-slider
 https://kenwheeler.github.io/slick/
-$ npm install --save-dev slick-carousel
+$ npm install --save-dev slick-carousel 
+16. установка reteYo рисует звезды
+    https://www.npmjs.com/package/@rateyo/jquery
+    https://github.com/prrashi/rateYo?tab=readme-ov-file
+    npm i rateyo@2.3.2 --save-dev 
 
 
