@@ -38,10 +38,19 @@ $bg: #f6f6f6;
   box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
 }
 
-
-%bgimg{
+%bgimg {
   background-image: url('../images/decor/video-fashin-bg.svg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+%btn_link {
+  @extend %roboto-400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $title;
+  display: inline-block;
+  border: 1px solid $accent;
+  padding: 16px 27px;
 }

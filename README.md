@@ -1224,5 +1224,8 @@ $ npm install --save-dev slick-carousel
     https://www.npmjs.com/package/@rateyo/jquery
     https://github.com/prrashi/rateYo?tab=readme-ov-file
     npm i rateyo@2.3.2 --save-dev 
-
+17.  Песочница с кучей программ(таймер)- 
+     Таймер:
+     https://codepen.io/trending
+    https://codepen.io/SitePoint/pen/NWxKgxN?editors=1010
 
