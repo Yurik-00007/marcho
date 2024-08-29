@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-color: $default;
+  color: $default;
   font-size: 16px;
   line-height: 26px;
   font-weight: 500;
@@ -13,27 +13,34 @@ color: $default;
   flex-direction: column;
 
 }
-.main{
+
+.main {
   flex: 1;
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-a{
+.top-container {
+  max-width: 1700px;
+}
+
+a {
   color: $default;
   font-size: 16px;
   line-height: 26px;
   font-weight: 500;
   @extend %quicksand-500;
 }
-.tittle{
+
+.tittle {
   text-align: center;
   @extend %roboto-700;
   font-size: 48px;
-  color:$title;
+  color: $title;
   line-height: 65px;
   text-transform: uppercase;
 }
@@ -44,6 +51,56 @@ a{
   margin: 0 auto 55px;
 }
 
+.breadcrumbs {
+  display: inline-flex;
+  justify-content: center;
+  padding-left: 25px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/icons/home-icon.svg');
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 0;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    color: #727272;
+    padding-right: 40px;
+    position: relative;
+
+    &::after {
+      content: "";
+      @extend %bgimg;
+      background-image: url('../images/icons/angle-right.svg');
+      width: 9px;
+      height: 10px;
+      position: absolute;
+      right: 15px;
+      top: 9px;
+    }
+
+    &:last-child {
+      color: $accent;
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
 
 
 

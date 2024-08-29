@@ -188,6 +188,17 @@
 }
 
 //================================================
+.top {
+  &__container {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 136px 0 140px;
+    text-align: center;
+    @extend %bgimg;
+  }
+}
+
+//================================================
 .top-slider {
   background-image: url('../images/decor/top-slider-bg.png');
   background-repeat: no-repeat;
@@ -708,7 +719,8 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    &::after{
+
+    &::after {
       content: '';
       position: absolute;
       right: -20px;
@@ -811,6 +823,62 @@
   }
 }
 
+//================================================
+.modal {
+  max-width: 570px;
+  margin: 0 auto 120px;
+  padding-top: 120px;
+
+  &__links {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &__link {
+    color: #909090;
+    @extend %roboto-400;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0 30px;
+  }
+
+  &__link-active {
+    color: $accent;
+  }
+
+  &__label {
+    margin-bottom: 40px;
+    display: block;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: none;
+    background: $bg;
+    margin-top: 4px;
+    height: 60px;
+    padding: 0 15px;
+    font-size: 20px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    background: $title;
+    color: #fff;
+    @extend %roboto-400;
+    text-transform: uppercase;
+    padding: 14px 0;
+    border: none;
+    cursor: pointer;
+  }
+  &__error{
+    margin-top: 120px;
+    color: $accent;
+    display: inline-block;
+  }
+}
 
 //================================================
 
